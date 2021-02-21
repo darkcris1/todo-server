@@ -5,7 +5,7 @@ const config = require('config-cjs')
 module.exports = function (app) {
   app.use(
     cors({
-      origin: '*',
+      origin: config.clientUrl,
       credentials: true,
       exposedHeaders: 'AUTHORIZATION_TOKEN',
     }),
