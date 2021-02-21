@@ -1,0 +1,30 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "full stack todo server",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon ."
+  },
+  "keywords": [],
+  "author": "Cris Fandiño Jr. <sircnujnuj@gmail.com>",
+  "license": "MIT",
+  "engines": {
+    "node": "14.15.1"
+  },
+  "dependencies": {
+    "config-cjs": "^1.0.5",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
+    "express-session": "^1.17.1",
+    "json-msg": "^1.1.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.11.15",
+    "socket.io": "^3.1.1"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0"
+  }
+}
