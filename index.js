@@ -3,6 +3,8 @@ require('express-async-errors')
 
 const app = express()
 
+app.set('trust proxy', 1)
+
 if (app.get('env') === 'development') {
   require('dotenv').config()
 }
