@@ -15,6 +15,7 @@ module.exports = function (app) {
       name: '__user',
       secret: config.cookieSecret,
       maxAge: 60 * 60 * 24 * 1000 * Number(config.cookieAge), // 15 days
+      sameSite: 'none',
     }),
   )
 }
