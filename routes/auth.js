@@ -25,24 +25,7 @@ router.post('/login', async (req, res) => {
       .status(400)
       .send({ error: true, message: 'Incorrect email or password' })
 
-  req.session.userID = user._id
   sender(res, { todoID: user.todoID, username })
-})
-
-// Clear cookie
-router.get('/logout', (req, res) => {
-  res.clearCookie('__user', { path: '/' }).send({ message: 'Cookie Cleared' })
-})
-
-// For Sessions
-router.get('/session', async (req, res) => {
-  const userID = req.session.userID
-  if (userID) {
-    const { username, todoID } = await User.findOne({ _id: userID })
-    return sender(res, { todoID, username })
-  }
-
-  return res.status(404).send({ message: 'The user has no session' })
 })
 
 router.post('/register', async (req, res) => {
@@ -64,8 +47,7 @@ router.post('/register', async (req, res) => {
     password: await hash(password),
     todoID: mongoose.Types.ObjectId().toHexString(),
   })
-  const result = await u.save()
-  req.session.userID = result._id
+  await u.save()
   sender(res, { todoID: u.todoID, username })
 })
 
