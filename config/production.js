@@ -1,4 +1,4 @@
 module.exports = {
   dbUri: process.env.DB_URI,
-  clientUrl: 'https://etodos.netlify.app',
+  clientUrl: 'https://etodos.vercel.app/',
 }
